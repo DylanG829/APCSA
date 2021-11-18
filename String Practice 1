@@ -1,0 +1,15 @@
+class Main {
+  public static void main(String[] args) {
+
+    String str = "Computer Science Rocks!";
+   
+    String reverse = "";
+    for(int i = str.length(); i > 0; i-- ){
+      String ch = str.substring(i-1, i);
+      reverse = reverse + ch;
+
+    }
+    System.out.println(reverse);
+
+  }
+}
