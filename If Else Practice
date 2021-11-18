@@ -1,0 +1,26 @@
+import java.util.scanner;
+
+class Main {
+  public static void main(String[] args) {
+    
+    Scanner object = new Scanner(System.in);
+    System.out.print("Enter your grade: ");
+    int avg = object.nextInt();
+    if (avg >= 90){
+      System.out.println("A");
+    }
+    else if (avg >= 80){
+      System.out.println("B");
+    }
+    else if (avg >= 70){
+      System.out.println("C");
+    }
+    else if (avg >= 60){
+      System.out.println("D");
+    }
+    else{
+      System.out.println("F");
+    }  
+
+  }
+}
