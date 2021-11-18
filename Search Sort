@@ -1,0 +1,150 @@
+class Main {
+  public static void main(String[] args) {
+// Part I: Searching
+// BINARY SEARCH
+// Write code that will perform a binary search on sortedArray. If a 
+// target is found, it will print its location, if not it will print 
+// an error message to the user
+    int[] sortedArray = new int [5];
+    sortedArray[0] = 21;
+    sortedArray[1] = 35;
+    sortedArray[2] = 42;
+    sortedArray[3] = 7;
+    sortedArray[4] = 81;
+
+    int target = 81;
+
+    int foundIndex = -1;
+    int low = 0, high = sortedArray.length-1, middle = (high+low)/2;
+
+    while (sortedArray[middle] != target && low <= high){
+      if(target  < sortedArray[middle]){
+        high = middle-1; 
+      }
+      else{
+        low = middle +1;
+      }
+      middle = (low+high)/2;
+    }
+
+    if (sortedArray[middle] == target){
+      foundIndex = middle;
+    }if (foundIndex >= 0){
+      System.out.println ("The number was found! " + target + " is located at index " + middle);
+    }else {
+      System.out.println ("The number was not found.");
+    }
+
+    // Identify a second target (that is NOT expected to be found in 
+    // sortedArray array), and print the result 
+    int target2 = 54;
+
+    int index2 = -1;
+    int low2 = 0, high2 = sortedArray.length-1, middle2 = (high2+low2)/2;
+
+    while (sortedArray[middle2] != target2 && low2 <= high2){
+      if(target2  < sortedArray[middle]){
+        high2 = middle2-1; 
+      }
+      else{
+        low2 = middle2 +1;
+      }
+      middle2 = (low2+high2)/2;
+    }
+
+    if (sortedArray[middle2] == target2){
+      index2 = middle2;
+    }
+
+    if (index2 >= 0){
+      System.out.println ("It has been found! " + target2 + " is located at index " + middle2 + "!");
+    }
+    else {
+      System.out.println ("The number " + target2 + " was not found.");
+    }
+    // LINEAR SEARCH
+    // Write code that will perform linear searches on both sortedArray 
+    // and unSortedArray. If a target is found, it will print its 
+    // location, if not it will print an error message to the user
+    int[] unSortedArray = new int[5];
+    unSortedArray[0] = 5;
+    unSortedArray[1] = 10;
+    unSortedArray[2] = 15;
+    unSortedArray[3] = 20;
+    unSortedArray[4] = 25;
+
+    // Identify targets (that are expected to be found), and print the 
+    // result
+    int targetNum = 15;
+    boolean num = false;
+
+    for(int i = 0; i < unSortedArray.length; i++){
+      if (unSortedArray[i] == targetNum){
+        num = true;
+      }
+    }
+    if (num){
+      System.out.println(targetNum + " has been found!" );
+    }
+    else {
+      System.out.println("the number " + targetNum + " was not found.");
+    }
+    // Identify targets (that are NOT expected to be found), and print the 
+    // result 
+    int[] sortedArray2 = new int [5];
+    sortedArray[0] = 21;
+    sortedArray[1] = 35;
+    sortedArray[2] = 42;
+    sortedArray[3] = 7;
+    sortedArray[4] = 81;
+
+    int targetNum2 = 13;
+    boolean num2 = false;
+
+    for(int i = 0; i < sortedArray2.length; i++){
+      if (sortedArray2[i] == targetNum2){
+        num2 = true;
+      }
+    }
+    if (num2){
+      System.out.println(targetNum2 + " has been found!" );
+    }
+    else {
+      System.out.println("the number " + targetNum2 + " was not found");
+    }
+
+    // Part II: Sorting
+    // Print unSortedArray
+    // Create an algorithm that will perform one of the following sorts:
+    // - Selection Sort 
+    // - Insertion Sort
+    // Sort unSortedArray
+    // Print unSortedArray
+    int[] unSortedArray2 = new int [5];
+    unSortedArray2[0] = 12;
+    unSortedArray2[1] = 2;
+    unSortedArray2[2] = 6;
+    unSortedArray2[3] = 16;
+    unSortedArray2[4] = 21;
+
+    for (int index = 1; index < unSortedArray2.length; index++){
+
+      int x = unSortedArray2[index];
+      int y = index;
+
+    while (y > 0 && unSortedArray2 [y-1] > x){
+      unSortedArray2[y] = unSortedArray2[y-1];
+      y--;
+    }
+    unSortedArray2[y] = x;
+    }
+
+    for (int value: unSortedArray2){
+    System.out.println("The unsorted array sorted is: ");
+
+    System.out.println(value);
+    }
+    System.out.println("The sorted array is: " + unSortedArray2);      
+      
+      }
+    }
