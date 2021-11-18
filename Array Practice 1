@@ -1,0 +1,93 @@
+import java.util.Scanner;
+import java.util.Random;
+class Main {
+  public static void main(String[] args) {
+    Scanner object = new Scanner(System.in);
+    
+    // Create an integer array 'numArray' containing five integers
+    int[] numArray = new int [5];
+    numArray[0] = 5;
+    numArray[1] = 25;
+    numArray[2] = 9;
+    numArray[3] = 34;
+    numArray[4] = 31;
+    //Print the array using a standard for loop
+    for (int x = 0; x < numArray.length; x++) {
+      System.out.println(numArray[x]);
+    }
+    // Print the array using an enhanced loop
+    for (int x : numArray) {
+      x = x;
+      System.out.println(x);
+    }
+    // Then print only the odd number indices
+    for (int x = 1; x < numArray.length; x += 2) {
+      System.out.println(numArray[x]);
+    }
+    // Create an integer array 'numArray2' of length 10, containing no values
+    int[] numArray2 = new int[10];
+    // Using a for loop add 10 random numbers to the arrays
+    for (int x = 0; x < numArray2.length; x++) {
+      numArray2[x] = (1 + (int) (Math.random() * 100));
+      // Print the array
+      System.out.println(numArray2[x]);
+    }
+    // Print the average value for the numbers in 'numArray2'
+    int sum = 0;
+    for (int x = 0; x < numArray2.length; x++) {
+      sum = sum + numArray2[x];
+    }
+    double avg = sum / numArray2.length;
+    System.out.println("The avgerage value is " + avg);
+    
+    
+    //Part 2: Hogwarts Sorting Hat
+    // Create a String arra 'hogwartsArray' with the four hogwarts houses in it
+    String[] hogwartsArray = new String[4];
+    hogwartsArray[0] = "Gryffindor";
+    hogwartsArray[1] = "Hufflepuff";
+    hogwartsArray[2] = "Ravenclaw";
+    hogwartsArray[3] = "Slytherin";
+    
+    // Ask a user to input a name
+    System.out.print("What is your name? ");
+    String userName = object.nextLine();
+    
+    // Randomly select which house they have been chosen into
+    String userHouse = hogwartsArray[(int) (Math.random() * 5)];
+    
+    // Print to the user: <Name of user> you have been selected to <House chosen>!
+    System.out.println(userName + " you have been selected to " + userHouse + "!");
+
+// Part 3: Create a Histogram
+    Random r = new Random();
+// Create an integer array ‘histogramArray’ of length 5.
+
+    int[] histogramArray = {0, 0, 0, 0, 0};
+
+// Create a loop to generate 100 random numbers from 0 to 50
+
+// Store the number of times each random number occurs in the
+// histogramArray split up in series of 10
+
+    int rand;
+    for (int i = 0; i < 100; i++) {
+    rand = r.nextInt(50);
+    if (rand <= 9) { histogramArray[0]++; }
+    else if (rand <= 19) { histogramArray[1]++; }
+    else if (rand <= 29) { histogramArray[2]++; }
+    else if (rand <= 39) { histogramArray[3]++; }
+    else { histogramArray[4]++; }
+    }
+
+// Print out the total number of times a number fell in that range.
+
+    for (int i = 0; i < histogramArray.length; i++) {
+      System.out.print(10*i + "-" + (10*i+9) + ": ");
+    for (int x = 0; x < histogramArray[i]; x++) {
+      System.out.print(x + "/");
+      }
+    System.out.println();
+        }
+    }
+}
