@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+
+class Main {
+  public static void main(String[] args) {
+    
+    Scanner myObj = new Scanner(System.in);
+    System.out.print("Enter the amount of 'Be Prepared' books you would like to purchase: ");
+    int bpAmount = myObj.nextInt();
+    System.out.print("Enter the amount of 'Next Best' books you would like to purchase: ");
+    int nbAmount = myObj.nextInt();
+
+    if (bpAmount + nbAmount == 2){
+      System.out.println("your total is $39.95");
+    }
+    else if (bpAmount == 1 && nbAmount == 0)
+    {
+      System.out.println("Your total is $20.95");
+    }
+    else if (bpAmount == 0 && nbAmount == 1)
+    {
+      System.out.println("Your total is $21.95");
+    }
+    else if (bpAmount + nbAmount >= 3 && bpAmount + nbAmount <=11)
+    {
+      int aVal = bpAmount + nbAmount;
+      System.out.println("Your total is $" + aVal * 16.95);
+    }
+    else if (bpAmount + nbAmount >= 12)
+    {
+      int bVal = bpAmount + nbAmount;
+      System.out.println("Your total is $" + bVal * 16);
+    }
+  }
+}
