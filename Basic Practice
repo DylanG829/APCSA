@@ -1,0 +1,27 @@
+import java.util.Scanner;
+class Main {
+  public static void main(String[] args) {
+    world();
+    name();
+    num(6,9);
+    disStr("Hello");
+    findP(4,7);
+  }
+    public static void world() {
+      System.out.println("Hello World");
+    }
+    public static void name() {
+      System.out.println("Dylan Goldberg");
+    }
+    public static void num(int a , int b) {
+      System.out.println(a+b);
+    }
+    public static void disStr(String x) { 
+      System.out.println(x);
+    } 
+    public static void findP(int l, int w) {
+        int p = (2*l) + (2*w);
+        System.out.print("Perimeter ~ " +p); 
+    }
+        
+}
